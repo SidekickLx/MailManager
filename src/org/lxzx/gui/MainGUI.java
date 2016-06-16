@@ -237,6 +237,22 @@ public class MainGUI extends JFrame {
         	@Override
 			public void actionPerformed(ActionEvent e){   		
         		//TODO
+        		User newUser = new User(userName,passWord);
+        	 	inBoxMailReciever = new MailReceiver();
+        	 	outBoxMailReciever = new MailReceiver();
+        	 	draftMailReciever = new MailReceiver();
+        	 	junkMailReciever = new MailReceiver();
+        	 	try {
+        	 		inBoxMailReciever.recieveMail(newUser,"INBOX");
+        	 		outBoxMailReciever.recieveMail(newUser, "ÒÑ·¢ËÍ");
+        	 		draftMailReciever.recieveMail(newUser, "²Ý¸å¼Ð");
+        	 		junkMailReciever.recieveMail(newUser, "À¬»øÓÊ¼þ");
+        		} catch (Exception e2) {
+        			// TODO Auto-generated catch block
+        			e2.printStackTrace();
+        		}
+        		init();
+        		repaint();
         	}
         });
 		
