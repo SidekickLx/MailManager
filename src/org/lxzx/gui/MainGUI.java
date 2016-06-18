@@ -9,15 +9,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JSplitPane;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
-import javax.swing.JTree;
+import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 
 import org.lxzx.email.Email;
@@ -42,7 +34,8 @@ public class MainGUI extends JFrame {
 	private JLabel subjectLabel;
 	private JTextField subjectField;
 	private JLabel contentLabel;
-	private JTextArea contentArea;
+	private JEditorPane contentArea;
+
 	
 	private JLabel currentUserLabel;
 	
@@ -148,7 +141,14 @@ public class MainGUI extends JFrame {
 		this.subjectLabel = new JLabel("    邮件主题：");
 		this.subjectField = new JTextField(20);
 		this.contentLabel = new JLabel("    邮件正文： ");
-		this.contentArea = new JTextArea(15, 20);
+		this.contentArea = new JEditorPane();
+
+		//放到滚动窗格中才能滚动查看所有内容
+		JScrollPane scrollPane1 = new JScrollPane(contentArea);
+		contentArea.setContentType("text/html");
+
+
+
 		fromField.setEditable(false);
 		contentArea.setEditable(false);
         toField.setEditable(false);
@@ -169,10 +169,12 @@ public class MainGUI extends JFrame {
         jPanel4 = new JPanel();
         
         this.jSplitPane.setDividerLocation(220);//设定分割面板的左右比例
-        jSplitPane.add(jPanel1, JSplitPane.LEFT);
+		JScrollPane scrollPane2 = new JScrollPane(jPanel1);
+        jSplitPane.add(scrollPane2, JSplitPane.LEFT);
         jSplitPane.add(jPanel2, JSplitPane.RIGHT);
         tree = createTree();
         jPanel1.add(tree);
+
         
         //grid 布局，在右上
         jPanel3.add(fromLabel);
@@ -185,7 +187,7 @@ public class MainGUI extends JFrame {
         jPanel2.add(jPanel3,BorderLayout.NORTH);
         
         //右下邮件正文部分
-        jPanel2.add(contentArea,BorderLayout.CENTER);
+        jPanel2.add(scrollPane1,BorderLayout.CENTER);
         
         //上方的按钮部分
         jPanel4.add(currentUserLabel);

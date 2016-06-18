@@ -7,7 +7,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Properties;
 import javax.mail.*;   
-import javax.mail.internet.*; 
+import javax.mail.internet.*;
+
 
 
 
@@ -91,7 +92,7 @@ public class MailReceiver {
 	         
 		}  
 		//πÿ±’¡¨Ω”  
-		folder.close(false);  
+		folder.close(false);
 		store.close();  
 	}
 	

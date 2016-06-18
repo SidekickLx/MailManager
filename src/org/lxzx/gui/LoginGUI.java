@@ -5,8 +5,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -24,21 +22,16 @@ import org.lxzx.email.User;
 
 import org.lxzx.email.Settings;
 
-import org.lxzx.email.MailReceiver;;
 
 public class LoginGUI extends JDialog {
-	
-
-
-	MainGUI mainGui;
-	
+	private MainGUI mainGui;
 	private JLabel userNameLabel;
 	private JTextField userNameField;
 	private JLabel pwdLabel;
 	private JPasswordField  pwdField;
 	private JLabel serverLabel;
 	private JComboBox<String> server;
-	JCheckBox save;
+	private JCheckBox save;
 	private JButton login,cancel;
     private JPanel jp1,jp2,jp3,jp4,jp5;	
     
@@ -141,9 +134,4 @@ public class LoginGUI extends JDialog {
 		this.init();
         }
 	}
-	
-
-	
-
-
 }

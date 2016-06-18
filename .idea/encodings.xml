@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/org/lxzx/email/Email.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/lxzx/email/MailReceiver.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/lxzx/email/MailSender.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/org/lxzx/gui/LoginGUI.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/org/lxzx/gui/MailSenderGUI.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/org/lxzx/gui/MainGUI.java" charset="GBK" />

@@ -8,7 +8,7 @@ import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
+
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -69,7 +69,7 @@ public class MailSenderGUI extends JFrame implements ActionListener {
 
 		this.sendBtn.addActionListener(this);
 		this.cancelBtn.addActionListener(this);
-		
+
 		JPanel upPanel = new JPanel(new GridLayout(6, 2, 5, 5));
 		upPanel.add(fromLabel);
 		upPanel.add(fromField);
